@@ -63,18 +63,18 @@ extension ContentControllerObject: UITableViewDataSource {
             cell.backgroundColor = .clear
             cell.tags = getBikesTags(station.numBikes, station.numEBikes)
             cell.footnoteText = "Bikes " + (station.numBikes > 0 ? "Available" : "Unavailable")
-            cell.footnoteLabel.textColor = station.numBikes > 0 ? UIColor.preferredFioriColor(forStyle: .positive) : UIColor.preferredFioriColor(forStyle: .negative)
+            cell.footnoteLabel.textColor = station.numBikes > 0 ? UIColor.preferredFioriColor(forStyle: .positiveLabel) : UIColor.preferredFioriColor(forStyle: .negativeLabel)
             cell.statusImage = UIImage(named: "bicycle")
             cell.statusImageView.tintColor = cell.footnoteLabel.textColor
             cell.substatusImage = FUIIconLibrary.system.flashOff.withRenderingMode(.alwaysTemplate)
-            cell.substatusImageView.tintColor = station.numEBikes > 0 ? UIColor.preferredFioriColor(forStyle: .positive) : UIColor.preferredFioriColor(forStyle: .negative)
+            cell.substatusImageView.tintColor = station.numEBikes > 0 ? UIColor.preferredFioriColor(forStyle: .positiveLabel) : UIColor.preferredFioriColor(forStyle: .negativeLabel)
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: FUIMapDetailTagObjectTableViewCell.reuseIdentifier) as? FUIMapDetailTagObjectTableViewCell else { return UITableViewCell() }
             cell.backgroundColor = .clear
             cell.tags = getDocsTags(station.numDocsAvailable)
             cell.footnoteText = "Docs " + (station.numDocsAvailable > 0 ? "Available" : "Unavailable")
-            cell.footnoteLabel.textColor = station.numDocsAvailable > 0 ? UIColor.preferredFioriColor(forStyle: .positive) : UIColor.preferredFioriColor(forStyle: .negative)
+            cell.footnoteLabel.textColor = station.numDocsAvailable > 0 ? UIColor.preferredFioriColor(forStyle: .positiveLabel) : UIColor.preferredFioriColor(forStyle: .negativeLabel)
             cell.statusImage = FUIIconLibrary.map.panel.point.withRenderingMode(.alwaysTemplate)
             cell.statusImageView.tintColor = cell.footnoteLabel.textColor
             return cell

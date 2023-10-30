@@ -62,7 +62,6 @@ class BikeStationAnnotation: NSObject, FUIAnnotation {
             guard let distanceToUser = distanceToUser else { return nil }
             let distanceFormatter = MKDistanceFormatter()
             distanceFormatter.units = .imperial
-            distanceFormatter.distance
             return distanceFormatter.string(fromDistance: distanceToUser)
         }
     }

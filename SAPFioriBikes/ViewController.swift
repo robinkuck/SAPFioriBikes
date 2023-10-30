@@ -77,6 +77,9 @@ class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, Search
         detailPanel.searchResults.searchBar.delegate = searchResultsObject
         detailPanel.content.tableView.register(FUIMapDetailTagObjectTableViewCell.self, forCellReuseIdentifier: FUIMapDetailTagObjectTableViewCell.reuseIdentifier)
         detailPanel.content.tableView.register(FUIMapDetailPanel.ButtonTableViewCell.self, forCellReuseIdentifier: FUIMapDetailPanel.ButtonTableViewCell.reuseIdentifier)
+        detailPanel.content.closeButton.didSelectHandler = { button in
+            self.detailPanel.popChildViewController()
+        }
         
         // MARK: Settings
         retainedSettingsController = SettingsViewController(mapModel)
@@ -109,11 +112,13 @@ class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, Search
         self.editingPanel.didChangeBaseMapType = { [unowned self] type in
             switch type {
             case .satellite:
-                self.colorScheme = .dark
+                self.colorScheme = .darkConstant
             default:
-                self.colorScheme = .light
+                self.colorScheme = .lightConstant
             }
         }
+        
+        //self.setEditing(true, animated: true)
     }
     
     override func editingPanelWillAppear(createItem: FUIMapLegendItem) {
@@ -149,6 +154,11 @@ class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, Search
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let bikeStationAnnotation = view.annotation as? BikeStationAnnotation else { return }
         pushContent(bikeStationAnnotation)
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        guard let bikeStationAnnotation = view.annotation as? BikeStationAnnotation else { return }
+        detailPanel.popChildViewController()
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

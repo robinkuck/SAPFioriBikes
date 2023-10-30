@@ -30,7 +30,7 @@ class SettingsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FUISwitchFormCell.reuseIdentifier) as? FUISwitchFormCell else { return UITableViewCell() }
         let displayName = model.layerModel[indexPath.row].displayName
-        cell.keyLabel.text = displayName
+        cell.title.text = displayName
         cell.value = model.layerIsEnabled[indexPath.row]
         cell.onChangeHandler = { [weak model] changeBool in
             model?.layerIsEnabled[indexPath.row] = changeBool
