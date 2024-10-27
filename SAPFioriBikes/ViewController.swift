@@ -40,7 +40,7 @@ class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, Search
         mapModel.loadData()
         
         // MARK: Standard Map Setup
-        title = mapModel.title
+        //title = mapModel.title
         mapView.delegate = self
         mapView.setRegion(mapModel.region, animated: true)
         mapView.mapType = mapModel.mapType
@@ -78,7 +78,9 @@ class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, Search
         detailPanel.content.tableView.register(FUIMapDetailTagObjectTableViewCell.self, forCellReuseIdentifier: FUIMapDetailTagObjectTableViewCell.reuseIdentifier)
         detailPanel.content.tableView.register(FUIMapDetailPanel.ButtonTableViewCell.self, forCellReuseIdentifier: FUIMapDetailPanel.ButtonTableViewCell.reuseIdentifier)
         detailPanel.content.closeButton.didSelectHandler = { button in
-            self.detailPanel.popChildViewController()
+            if let selectedAnnotation = self.mapView.selectedAnnotations.first {
+                self.mapView.deselectAnnotation(selectedAnnotation, animated: true)
+            }
         }
         
         // MARK: Settings
@@ -143,21 +145,36 @@ class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, Search
     }
     
     internal func pushContent(_ bikeStationAnnotation: BikeStationAnnotation) {
-        let region = MKCoordinateRegion(center: bikeStationAnnotation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002))
+        //let regionSpan = self.mapView.region.span.latitudeDelta * 111_000
+        let zoomLevel: Double = 200
+        let offsetDistance: Double = 100
+        let centerCoordinate = CLLocationCoordinate2D(latitude: bikeStationAnnotation.coordinate.latitude - (offsetDistance / 111_000), longitude: bikeStationAnnotation.coordinate.longitude)
+        let region = MKCoordinateRegion(center: centerCoordinate, latitudinalMeters: zoomLevel, longitudinalMeters: zoomLevel)
         mapView.setRegion(region, animated: true)
         contentObject = ContentControllerObject(bikeStationAnnotation)
         detailPanel.content.headlineText = contentObject.headlineText
         detailPanel.content.subheadlineText = contentObject.subheadlineText
-        detailPanel.pushChildViewController()
+        detailPanel.pushChildViewController(in: .middle)
+    }
+    
+    internal func saveRegion() {
+        self.mapModel.storedRegion = self.mapView.region
+    }
+    
+    internal func applyStoredRegion() {
+        if let storedRegion = self.mapModel.storedRegion {
+            self.mapView.setRegion(storedRegion, animated: true)
+        }
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        saveRegion()
         guard let bikeStationAnnotation = view.annotation as? BikeStationAnnotation else { return }
         pushContent(bikeStationAnnotation)
     }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        guard let bikeStationAnnotation = view.annotation as? BikeStationAnnotation else { return }
+        applyStoredRegion()
         detailPanel.popChildViewController()
     }
     

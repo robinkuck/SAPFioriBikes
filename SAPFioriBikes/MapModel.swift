@@ -22,9 +22,11 @@ class FioriBikeMapModel {
         return MKCoordinateRegion(center: center, span: span)
     }()
     
+    var storedRegion: MKCoordinateRegion? = nil
+    
     let mapType: MKMapType = .mutedStandard
     
-    // MARK: FUIMKMapViewDataSource Buisiness Objects
+    // MARK: FUIMKMapViewDataSource Business Objects
     
     weak var delegate: ViewController? = nil
     
