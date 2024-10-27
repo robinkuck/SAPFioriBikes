@@ -3,14 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4DDFBAC928D394EF0069E93C /* SAPFiori.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDFBAC728D394EF0069E93C /* SAPFiori.xcframework */; };
-		4DDFBACA28D394EF0069E93C /* SAPFiori.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDFBAC728D394EF0069E93C /* SAPFiori.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4DDFBACB28D394EF0069E93C /* SAPCommon.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDFBAC828D394EF0069E93C /* SAPCommon.xcframework */; };
-		4DDFBACC28D394EF0069E93C /* SAPCommon.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4DDFBAC828D394EF0069E93C /* SAPCommon.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4DD42ACF2CCE81FC008F7CE3 /* SAPFiori in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD42ACE2CCE81FC008F7CE3 /* SAPFiori */; };
+		4DD42AD12CCE8234008F7CE3 /* SAPCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 4DD42AD02CCE8234008F7CE3 /* SAPCommon */; };
 		4DDFBAD028D3B5010069E93C /* StellarJay in Frameworks */ = {isa = PBXBuildFile; productRef = 4DDFBACF28D3B5010069E93C /* StellarJay */; };
 		AA2EAD3B21F7A31B00A18856 /* WalkZoneOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2EAD3A21F7A31B00A18856 /* WalkZoneOverlay.swift */; };
 		AA2EAD4021F7A63E00A18856 /* BikePathOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2EAD3F21F7A63E00A18856 /* BikePathOverlay.swift */; };
@@ -52,24 +50,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		4DDFBACD28D394EF0069E93C /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				4DDFBACA28D394EF0069E93C /* SAPFiori.xcframework in Embed Frameworks */,
-				4DDFBACC28D394EF0069E93C /* SAPCommon.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		4DDFBAC728D394EF0069E93C /* SAPFiori.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SAPFiori.xcframework; path = "../frameworks/Release-xcframework/SAPFiori.xcframework"; sourceTree = "<group>"; };
 		4DDFBAC828D394EF0069E93C /* SAPCommon.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SAPCommon.xcframework; path = "../frameworks/Release-xcframework/SAPCommon.xcframework"; sourceTree = "<group>"; };
+		4DF106B02CCE7D30008C17D7 /* SAPOData.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SAPOData.xcframework; path = "../../Downloads/Release-xcframework/SAPOData.xcframework"; sourceTree = "<group>"; };
+		4DF106B12CCE7D30008C17D7 /* SAPFoundation.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SAPFoundation.xcframework; path = "../../Downloads/Release-xcframework/SAPFoundation.xcframework"; sourceTree = "<group>"; };
+		4DF106B22CCE7D30008C17D7 /* SAPFiori.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SAPFiori.xcframework; path = "../../Downloads/Release-xcframework/SAPFiori.xcframework"; sourceTree = "<group>"; };
+		4DF106B32CCE7D30008C17D7 /* SAPFioriFlows.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SAPFioriFlows.xcframework; path = "../../Downloads/Release-xcframework/SAPFioriFlows.xcframework"; sourceTree = "<group>"; };
+		4DF106B42CCE7D31008C17D7 /* SAPOfflineOData.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SAPOfflineOData.xcframework; path = "../../Downloads/Release-xcframework/SAPOfflineOData.xcframework"; sourceTree = "<group>"; };
+		4DF106C02CCE7D76008C17D7 /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFiori.framework; path = "../../Downloads/Release-xcframework/SAPFiori.xcframework/ios-arm64_x86_64-simulator/SAPFiori.framework"; sourceTree = "<group>"; };
+		4DF106C42CCE7DBB008C17D7 /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFiori.framework; path = "../../Downloads/Release-xcframework/SAPFiori.xcframework/ios-arm64/SAPFiori.framework"; sourceTree = "<group>"; };
+		4DF106CE2CCE7EA4008C17D7 /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFiori.framework; path = "../../Downloads/Release-xcframework/SAPFiori.xcframework/ios-arm64_x86_64-maccatalyst/SAPFiori.framework"; sourceTree = "<group>"; };
+		4DF106D52CCE7ECD008C17D7 /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFiori.framework; path = "../../Downloads/Release-xcframework/SAPFiori.xcframework/xros-arm64/SAPFiori.framework"; sourceTree = "<group>"; };
+		4DF106D92CCE7EE2008C17D7 /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAPFiori.framework; path = "../../Downloads/Release-xcframework/SAPFiori.xcframework/xros-arm64_x86_64-simulator/SAPFiori.framework"; sourceTree = "<group>"; };
 		AA2EAD3A21F7A31B00A18856 /* WalkZoneOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkZoneOverlay.swift; sourceTree = "<group>"; };
 		AA2EAD3F21F7A63E00A18856 /* BikePathOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikePathOverlay.swift; sourceTree = "<group>"; };
 		AA2EAD4121F7AC5100A18856 /* BreweryAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreweryAnnotation.swift; sourceTree = "<group>"; };
@@ -109,9 +102,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DDFBAC928D394EF0069E93C /* SAPFiori.xcframework in Frameworks */,
-				4DDFBACB28D394EF0069E93C /* SAPCommon.xcframework in Frameworks */,
 				4DDFBAD028D3B5010069E93C /* StellarJay in Frameworks */,
+				4DD42AD12CCE8234008F7CE3 /* SAPCommon in Frameworks */,
+				4DD42ACF2CCE81FC008F7CE3 /* SAPFiori in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +121,16 @@
 		4DDFBAC628D394EF0069E93C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4DF106C02CCE7D76008C17D7 /* SAPFiori.framework */,
+				4DF106C42CCE7DBB008C17D7 /* SAPFiori.framework */,
+				4DF106CE2CCE7EA4008C17D7 /* SAPFiori.framework */,
+				4DF106D52CCE7ECD008C17D7 /* SAPFiori.framework */,
+				4DF106D92CCE7EE2008C17D7 /* SAPFiori.framework */,
+				4DF106B22CCE7D30008C17D7 /* SAPFiori.xcframework */,
+				4DF106B32CCE7D30008C17D7 /* SAPFioriFlows.xcframework */,
+				4DF106B12CCE7D30008C17D7 /* SAPFoundation.xcframework */,
+				4DF106B02CCE7D30008C17D7 /* SAPOData.xcframework */,
+				4DF106B42CCE7D31008C17D7 /* SAPOfflineOData.xcframework */,
 				4DDFBAC828D394EF0069E93C /* SAPCommon.xcframework */,
 				4DDFBAC728D394EF0069E93C /* SAPFiori.xcframework */,
 			);
@@ -231,7 +234,6 @@
 				AA62D457219D39DB00F4931C /* Sources */,
 				AA62D458219D39DB00F4931C /* Frameworks */,
 				AA62D459219D39DB00F4931C /* Resources */,
-				4DDFBACD28D394EF0069E93C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +242,8 @@
 			name = SAPFioriBikes;
 			packageProductDependencies = (
 				4DDFBACF28D3B5010069E93C /* StellarJay */,
+				4DD42ACE2CCE81FC008F7CE3 /* SAPFiori */,
+				4DD42AD02CCE8234008F7CE3 /* SAPCommon */,
 			);
 			productName = SAPFioriBikes;
 			productReference = AA62D45B219D39DB00F4931C /* SAPFioriBikes.app */;
@@ -293,6 +297,7 @@
 			mainGroup = AA62D452219D39DB00F4931C;
 			packageReferences = (
 				4DDFBACE28D3B5000069E93C /* XCRemoteSwiftPackageReference "stellarjay" */,
+				4DF106E82CCE80A7008C17D7 /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */,
 			);
 			productRefGroup = AA62D45C219D39DB00F4931C /* Products */;
 			projectDirPath = "";
@@ -631,9 +636,27 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		4DF106E82CCE80A7008C17D7 /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SAP/cloud-sdk-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.8.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4DD42ACE2CCE81FC008F7CE3 /* SAPFiori */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4DF106E82CCE80A7008C17D7 /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */;
+			productName = SAPFiori;
+		};
+		4DD42AD02CCE8234008F7CE3 /* SAPCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4DF106E82CCE80A7008C17D7 /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */;
+			productName = SAPCommon;
+		};
 		4DDFBACF28D3B5010069E93C /* StellarJay */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4DDFBACE28D3B5000069E93C /* XCRemoteSwiftPackageReference "stellarjay" */;
