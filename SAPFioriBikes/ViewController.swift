@@ -69,6 +69,8 @@ class ViewController: FUIMKMapFloorplanViewController, MKMapViewDelegate, Search
             if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
                 window.endEditing(true)
             }
+            saveRegion()
+            self.mapView.selectAnnotation(station, animated: true)
             self.pushContent(station)
         }
         detailPanel.searchResults.tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
